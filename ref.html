@@ -1,0 +1,20 @@
+<div class="container">
+        <p>{{message}}</p>
+        <!-- <p>{{trainings}}</p> -->
+        <form>
+            <div class="row">
+                <div class="col-md-12">
+                    <input placeholder="Search here" class="form-control" ng-model="query" />
+                </div>
+            </div>
+        </form>
+        <div class="jumbotron" ng-repeat = "t in trainings.data | filter : query    ">
+            <div class="training">
+                <h1>{{t.title}}</h1>
+                <div class="badge badge-success">
+                        {{t.duration}} month<span ng-if = "t.duration > 1">s</span>
+                </div>
+                <p>{{t.description}}</p>
+            </div>
+        </div> 
+    </div>
